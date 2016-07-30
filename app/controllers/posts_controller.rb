@@ -6,4 +6,10 @@ class PostsController < ApplicationController
   def show
     render json: Post.find(params[:id])
   end
+
+  def comment
+    render json: Comment.where(postId: params[:postId])
+  end
+
+  
 end
